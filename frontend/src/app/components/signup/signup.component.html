@@ -1,1 +1,63 @@
-<p>signup works!</p>
+<div class="mt-4 col-8 offset-2">
+  <div class="card">
+    <div class="card-header">Register Here</div>
+    <div class="card-body">
+      <form  (ngSubmit)="onSubmit(form)" #signupform="ngForm">
+        <div class="alert alert-danger" [hidden]="!this.errors">
+          {{this.errors}}
+        </div>
+        <div class="row mb-3">
+          <label for="inputname3" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" class="form-control" id="inputEmail3" [(ngModel)]="form.name" placeholder="Name" required minlength="8" maxlength="20" pattern="" appForbiddenName="bob" #name="ngModel">
+            <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+              <div *ngIf="name.errors?.required">name Required</div>
+              <div *ngIf="name.errors?.minlength">name Should be minimum {{name.errors?.minlength.requiredLength}} caracters</div>
+              <div *ngIf="name.errors?.pattern">name doesn't match the pattern</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" class="form-control" id="inputEmail3" [(ngModel)]="form.email" placeholder="Email" required minlength="8" maxlength="20" pattern="" appForbiddenName="bob" #email="ngModel">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors?.required">email Required</div>
+              <div *ngIf="email.errors?.minlength">email Should be minimum {{email.errors?.minlength.requiredLength}} caracters</div>
+              <div *ngIf="email.errors?.pattern">email doesn't match the pattern</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" name="password" class="form-control" id="inputPassword3" [(ngModel)]="form.password" required minlength="8" maxlength="20" pattern="" appForbiddenName="bob" placeholder="Password" #password="ngModel">
+            <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+              <div *ngIf="password.errors?.required">Password Required</div>
+              <div *ngIf="password.errors?.minlength">Password Should be minimum {{password.errors?.minlength.requiredLength}} caracters</div>
+              <div *ngIf="password.errors?.pattern">Password doesn't match the pattern</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm-Password</label>
+          <div class="col-sm-10">
+            <input type="password" name="password-confirmation" class="form-control" id="inputPassword3" required minlength="8" maxlength="20" pattern="" appForbiddenName="bob" [(ngModel)]="form.password_confirmation" placeholder="Confirm Password" #cfpassword="ngModel">
+            <div class="alert alert-danger" *ngIf="cfpassword.touched && !cfpassword.valid">
+              <div *ngIf="cfpassword.errors?.required">Password Required</div>
+              <div *ngIf="cfpassword.errors?.minlength">Password Should be minimum {{cfpassword.errors?.minlength.requiredLength}} caracters</div>
+              <div *ngIf="cfpassword.errors?.pattern">Password doesn't match the pattern</div>
+              <div *ngIf="cfpassword.errors?.password[0]">{{cfpassword.errors?.password}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col sm-10">
+            <button type="submit" class="btn btn-primary offset-2" [disabled]="!signupform.valid">SignUp</button>
+            <a  routerLink="/login" class="btn btn-info bt" >Login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

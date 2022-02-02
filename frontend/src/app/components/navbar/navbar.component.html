@@ -1,6 +1,11 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand">Navbar</a>
-    <a class="navbar-brand" href="#">Login</a>
+    <div>
+      <a class="navbar-brand" routerLink="Login" *ngIf="!loggedIn">Login</a>
+      <a class="navbar-brand" routerLink="Profile" *ngIf="loggedIn">Profile</a>
+      <a class="navbar-brand"  href="#"  (click)="logout($event)" *ngIf="loggedIn">LogOut</a>
+
+    </div>
   </div>
 </nav>
