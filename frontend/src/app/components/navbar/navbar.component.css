@@ -1,0 +1,25 @@
+.blue-color:hover {
+    color:blue;
+}
+
+.green-color {
+    color:green;
+}
+
+.teal-color {
+    color:teal;
+}
+
+.yellow-color {
+color:yellow;
+}
+
+.red-color:hover {
+    color:red;
+}
+.vl{
+
+    border-left: 5px solid black;
+    height: 200px;
+    margin-left: 5%;
+}

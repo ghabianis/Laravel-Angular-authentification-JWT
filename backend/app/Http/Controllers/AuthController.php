@@ -86,4 +86,6 @@ class AuthController extends Controller
       $user = User::create($request->all());
       return $this->login($request);
     }
+
+
 }

@@ -1,0 +1,8 @@
+<app-header style="margin-top: 4%;"></app-header>
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<app-task-item
+     *ngFor="let Task of tasks"
+     [Task] ="Task"
+     (onToggleReminder)="onToggleReminder(Task)"
+     style="margin-top: 4%;"
+ ></app-task-item>

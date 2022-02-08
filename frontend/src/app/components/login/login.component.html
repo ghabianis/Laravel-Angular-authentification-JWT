@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">Login Here</div>
     <div class="card-body">
-      <form  (ngSubmit)="onSubmit(form)" #loginform="ngForm">
+      <form #loginform="ngForm"  (ngSubmit)="onSubmit(form)" >
 
         <div class="alert alert-danger" [hidden]="!this.error">
           {{this.error}}

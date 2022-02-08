@@ -1,11 +1,15 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand">Navbar</a>
+    <a class="navbar-brand">Task Tracer App</a>
     <div>
-      <a class="navbar-brand" routerLink="Login" *ngIf="!loggedIn">Login</a>
-      <a class="navbar-brand" routerLink="Profile" *ngIf="loggedIn">Profile</a>
-      <a class="navbar-brand"  href="#"  (click)="logout($event)" *ngIf="loggedIn">LogOut</a>
 
+
+      <a class="navbar-brand"  routerLink="taskTracer"   *ngIf="loggedIn"><i class="fas fa-tasks"></i></a>
+      <a class="navbar-brand"  routerLink="About"   *ngIf="loggedIn"><i class="fas fa-address-card" style="color: red;"></i></a>
+
+      <a class="navbar-brand bg-dark" routerLink="Login" *ngIf="!loggedIn"><i class="fas fa-sign-in-alt"></i></a>
+      <a class="navbar-brand" routerLink="Profile" *ngIf="loggedIn"><i class="fas fa-user-circle" style="color: red;"></i></a>
+      <a class="navbar-brand "  href="#"  (click)="logout($event)" *ngIf="loggedIn"><i class="fas fa-sign-out-alt" style="color: red;"></i></a>
     </div>
   </div>
 </nav>

@@ -1,0 +1,7 @@
+.loader-container {
+  position: absolute;
+  height: 100%;
+  width: 84.5%;
+  opacity: 0.8;
+  z-index: 99;
+}

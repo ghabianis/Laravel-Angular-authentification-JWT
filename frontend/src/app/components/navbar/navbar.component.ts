@@ -4,6 +4,7 @@ import * as e from 'cors';
 import { AuthService } from 'src/app/Services/auth.service';
 import { TokenService } from 'src/app/Services/token.service';
 import { HttpClient } from '@angular/common/http';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarComponent implements OnInit {
   public loggedIn? : boolean;
+  fagithub = faGithub;
   constructor( private auth: AuthService,private route:Router , private token: TokenService) {
 
   }
@@ -23,7 +25,7 @@ export class NavbarComponent implements OnInit {
        event.preventDefault();
        this.token.remove();
        this.auth.changeAuthStatus(false);
-       this.route.navigateByUrl('/Login');
+       this.route.navigateByUrl('Login');
   }
 
 }

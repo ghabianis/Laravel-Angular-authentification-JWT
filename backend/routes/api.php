@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\Controller;
 
 
 
@@ -32,10 +33,10 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::post('/me', [AuthController::class, 'me']);
     Route::post('/sendPasswordResetLink', [ResetPasswordController::class, 'sendPasswordResetLink']);
-    Route::post('/ChangePassword', [ChangePasswordController::class, 'ChangePassword']);
-
-
-
+    Route::post('/ChangePassword', [ChangePasswordController::class, 'process']);
 
 });
+
+Route::get('/getusername/{id}', [App\Http\Controllers\Controller::class, 'getusername']);
+
 

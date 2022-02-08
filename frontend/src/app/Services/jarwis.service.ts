@@ -13,11 +13,9 @@ export class JarwisService {
 
   login(data:any){
     return this.http.post(`${this.baseUrl}/login`,data);
-
   }
   signup(data:any){
     return this.http.post(`${this.baseUrl}/signup`,data);
-
   }
   sendPasswordResetLink(data:any){
     return this.http.post(`${this.baseUrl}/sendPasswordResetLink`,data);
@@ -25,6 +23,10 @@ export class JarwisService {
 
   changePassword(data:any){
     return this.http.post(`${this.baseUrl}/ChangePassword`,data);
+  }
+
+  getuser(id:any){
+   return this.http.get(`${this.baseUrl}/getusername/`+id)
   }
 
 }

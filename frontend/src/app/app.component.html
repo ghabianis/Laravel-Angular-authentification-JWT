@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
-<ng-snotify></ng-snotify>
-<div class="container">
+<div class="container" style="margin-top: 4%;">
+  <div *ngIf="load.isLoading |async" class="loader-container">
+    <mat-spinner style="top: 4%; left: 45%;"></mat-spinner>
+  </div>
   <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </div>

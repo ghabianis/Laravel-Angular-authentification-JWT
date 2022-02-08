@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from './loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+  constructor(public load:LoaderService) { }
+  ngOnInit() {
+    window.setTimeout(()=>{
+     this.load.isLoading.next(false);
+   },1000)
+
+ }
 }

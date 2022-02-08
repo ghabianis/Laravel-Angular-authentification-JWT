@@ -8,9 +8,7 @@ import { JarwisService } from 'src/app/Services/jarwis.service';
   styleUrls: ['./reponse-reset.component.css']
 })
 export class ReponseResetComponent implements OnInit {
-  public error = [
-
-  ]
+  public error = <any[]>([]);
 
   public form = {
       email:null,
@@ -34,8 +32,8 @@ export class ReponseResetComponent implements OnInit {
     )
   }
 
-  handleResponse(data:any){
-
+  handleResponse(error:any){
+     this.error = error.error.errors;
   }
 
   handleError(error:any){
